@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { CssBaseline, useMediaQuery, useTheme } from '@mui/material';
+import { CssBaseline, useMediaQuery, useTheme, Box } from '@mui/material';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 import MainPage from './components/MainPage';
-// import ChildComponent1 from './ChildComponent1';
-// import other child components as needed
 
 const App = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -17,14 +15,15 @@ const App = () => {
 
   return (
     <>
-    <CssBaseline />
-    <Navbar toggleSidebar={toggleSidebar} />
-    <Sidebar open={sidebarOpen} toggleSidebar={toggleSidebar} permanent={isPermanent} />
-    <MainPage>
-      {/* <ChildComponent1 /> */}
-      {/* Add other child components here */}
-    </MainPage>
-  </>
+      <CssBaseline />
+      <Navbar toggleSidebar={toggleSidebar} />
+      <Box sx={{ display: 'flex' }}>
+        <Sidebar open={sidebarOpen} toggleSidebar={toggleSidebar} permanent={isPermanent} />
+        <Box component="main" sx={{ flexGrow: 1,  marginTop: '64px', marginLeft: isPermanent ? '0' : 0 }}>
+          <MainPage />
+        </Box>
+      </Box>
+    </>
   );
 };
 
