@@ -1,10 +1,10 @@
 import React from 'react';
-import { Container } from '@mui/material';
+import { Box } from '@mui/material';
 
 const MainPage = ({ children }) => (
-  <Container>
+  <Box sx={{ backgroundColor: '#141416', minHeight: '100vh', padding: 2 }}>
     {children}
-  </Container>
+  </Box>
 );
 
 export default MainPage;
