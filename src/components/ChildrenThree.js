@@ -6,7 +6,7 @@ const ChildrenThree = () => {
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   return (
     <Box sx={{ display: 'flex', flexDirection: isSmallScreen ? 'column' : 'row', width: '100%' }}>
-    {/* <Box sx={{ 
+    <Box sx={{ 
       flex: isSmallScreen ? 'none' : 65, 
       display: 'flex', 
       flexWrap: 'wrap',
@@ -27,7 +27,7 @@ const ChildrenThree = () => {
       marginTop: isSmallScreen ? 1 : 0 
     }}>
       <Box sx={{ backgroundColor: '#1f1f26', padding: 1 }}>Right</Box>
-    </Box> */}
+    </Box>
   </Box>
   )
 }
