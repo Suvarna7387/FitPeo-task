@@ -1,5 +1,11 @@
 import React from "react";
-import { Box, useMediaQuery, useTheme, Typography } from "@mui/material";
+import {
+  Box,
+  useMediaQuery,
+  useTheme,
+  Typography,
+  CircularProgress,
+} from "@mui/material";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import ShoppingCartCheckoutOutlinedIcon from "@mui/icons-material/ShoppingCartCheckoutOutlined";
 import RemoveShoppingCartOutlinedIcon from "@mui/icons-material/RemoveShoppingCartOutlined";
@@ -39,7 +45,7 @@ const ChildrenOne = () => {
             flexDirection: "column",
             padding: 1,
             borderRadius: 2,
-            position: "relative", 
+            position: "relative",
           }}
         >
           <ShoppingCartOutlinedIcon />
@@ -59,7 +65,7 @@ const ChildrenOne = () => {
             sx={{
               display: "flex",
               alignItems: "center",
-              position: "absolute", 
+              position: "absolute",
               bottom: 15,
               right: 10,
             }}
@@ -102,7 +108,7 @@ const ChildrenOne = () => {
             sx={{
               display: "flex",
               alignItems: "center",
-              position: "absolute", 
+              position: "absolute",
               bottom: 15,
               right: 10,
             }}
@@ -125,7 +131,7 @@ const ChildrenOne = () => {
             flexDirection: "column",
             padding: 1,
             borderRadius: 2,
-            position: "relative", 
+            position: "relative",
           }}
         >
           <RemoveShoppingCartOutlinedIcon />
@@ -145,7 +151,7 @@ const ChildrenOne = () => {
             sx={{
               display: "flex",
               alignItems: "center",
-              position: "absolute", 
+              position: "absolute",
               bottom: 15,
               right: 10,
             }}
@@ -168,7 +174,7 @@ const ChildrenOne = () => {
             flexDirection: "column",
             padding: 1,
             borderRadius: 2,
-            position: "relative", 
+            position: "relative",
           }}
         >
           <ShoppingBasketOutlinedIcon />
@@ -188,7 +194,7 @@ const ChildrenOne = () => {
             sx={{
               display: "flex",
               alignItems: "center",
-              position: "absolute", 
+              position: "absolute",
               bottom: 15,
               right: 10,
             }}
@@ -212,14 +218,15 @@ const ChildrenOne = () => {
           width: isSmallScreen ? "100%" : "auto",
           marginTop: isSmallScreen ? 1 : 0,
           display: "flex",
-          flexDirection: "column",
+          flexDirection: "row",
           borderRadius: 2,
         }}
       >
-        <Typography variant="body1" sx={{ color: "#fff"}}>
-          Net Profit
-        </Typography>
-        <Typography
+        <Box>
+          <Typography variant="body1" sx={{ color: "#fff" }}>
+            Net Profit
+          </Typography>
+          <Typography
             variant="body2"
             sx={{ color: "#fff", fontWeight: "600", fontSize: "28px" }}
           >
@@ -239,6 +246,45 @@ const ChildrenOne = () => {
               3%
             </Typography>
           </Box>
+        </Box >
+        <Box>
+        <Box sx={{ position: 'relative', display: 'inline-flex', marginLeft:"90px"}}>
+          <CircularProgress
+            variant="determinate"
+            value={70}
+            size={70}
+            thickness={5}
+            sx={{ color: "#7194fe" }}
+          />
+            <Box
+          sx={{
+            top: 0,
+            left: 0,
+            bottom: 0,
+            right: 0,
+            position: 'absolute',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexDirection: 'column'
+          }}
+        >
+          <Typography
+             variant="body2"
+            sx={{ color: "#fff", fontWeight: "600", fontSize: "12px", textAlign: "center" }}
+          >
+            70% 
+            <Typography  variant="body2"
+            sx={{ color: "#fff", fontWeight: "200", fontSize: "8px", textAlign: "center" }}>Goal  <Typography  variant="body2"
+            sx={{ color: "#fff", fontWeight: "200", fontSize: "8px", textAlign: "center", marginBottom:"9px" }}>Completed</Typography></Typography>
+          </Typography>
+        </Box>
+        </Box>
+        <Box>
+            <Typography variant="body2"
+            sx={{ color: "#fff", fontWeight: "400", fontSize: "9px", marginLeft:"40px" }}>*The value here has been rounded off.</Typography>
+        </Box>
+        </Box>
       </Box>
     </Box>
   );
