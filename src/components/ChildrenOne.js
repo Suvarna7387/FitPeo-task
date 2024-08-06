@@ -46,6 +46,8 @@ const ChildrenOne = () => {
             padding: 1,
             borderRadius: 2,
             position: "relative",
+            width: "250px", // Set fixed width
+            height: "120px", // Set fixed height
           }}
         >
           <ShoppingCartOutlinedIcon />
@@ -89,6 +91,8 @@ const ChildrenOne = () => {
             padding: 1,
             borderRadius: 2,
             position: "relative",
+            width: "250px", // Set fixed width
+            height: "120px", // Set fixed height
           }}
         >
           <ShoppingCartCheckoutOutlinedIcon />
@@ -132,6 +136,8 @@ const ChildrenOne = () => {
             padding: 1,
             borderRadius: 2,
             position: "relative",
+            width: "250px", // Set fixed width
+            height: "120px", // Set fixed height
           }}
         >
           <RemoveShoppingCartOutlinedIcon />
@@ -175,6 +181,8 @@ const ChildrenOne = () => {
             padding: 1,
             borderRadius: 2,
             position: "relative",
+            width: "250px", // Set fixed width
+            height: "120px", // Set fixed height
           }}
         >
           <ShoppingBasketOutlinedIcon />
@@ -209,6 +217,7 @@ const ChildrenOne = () => {
           </Box>
         </Box>
       </Box>
+
       <Box
         sx={{
           flex: isSmallScreen ? "none" : isTabScreen ? 50 : 35,
@@ -230,7 +239,7 @@ const ChildrenOne = () => {
             variant="body2"
             sx={{ color: "#fff", fontWeight: "600", fontSize: "28px" }}
           >
-            $ 6759.25
+            $6759.25
           </Typography>
           <Box
             sx={{
@@ -246,44 +255,84 @@ const ChildrenOne = () => {
               3%
             </Typography>
           </Box>
-        </Box >
+        </Box>
         <Box>
-        <Box sx={{ position: 'relative', display: 'inline-flex', marginLeft:"90px"}}>
-          <CircularProgress
-            variant="determinate"
-            value={70}
-            size={70}
-            thickness={5}
-            sx={{ color: "#7194fe" }}
-          />
-            <Box
-          sx={{
-            top: 0,
-            left: 0,
-            bottom: 0,
-            right: 0,
-            position: 'absolute',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            flexDirection: 'column'
-          }}
-        >
-          <Typography
-             variant="body2"
-            sx={{ color: "#fff", fontWeight: "600", fontSize: "12px", textAlign: "center" }}
+          <Box
+            sx={{
+              position: "relative",
+              display: "inline-flex",
+              marginLeft: "90px",
+            }}
           >
-            70% 
-            <Typography  variant="body2"
-            sx={{ color: "#fff", fontWeight: "200", fontSize: "8px", textAlign: "center" }}>Goal  <Typography  variant="body2"
-            sx={{ color: "#fff", fontWeight: "200", fontSize: "8px", textAlign: "center", marginBottom:"9px" }}>Completed</Typography></Typography>
-          </Typography>
-        </Box>
-        </Box>
-        <Box>
-            <Typography variant="body2"
-            sx={{ color: "#fff", fontWeight: "400", fontSize: "9px", marginLeft:"40px" }}>*The value here has been rounded off.</Typography>
-        </Box>
+            <CircularProgress
+              variant="determinate"
+              value={70}
+              size={70}
+              thickness={5}
+              sx={{ color: "#7194fe" }}
+            />
+            <Box
+              sx={{
+                top: 0,
+                left: 0,
+                bottom: 0,
+                right: 0,
+                position: "absolute",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexDirection: "column",
+              }}
+            >
+              <Typography
+                variant="body2"
+                sx={{
+                  color: "#fff",
+                  fontWeight: "600",
+                  fontSize: "12px",
+                  textAlign: "center",
+                }}
+              >
+                70%
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "#fff",
+                    fontWeight: "200",
+                    fontSize: "8px",
+                    textAlign: "center",
+                  }}
+                >
+                  Goal{" "}
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: "#fff",
+                      fontWeight: "200",
+                      fontSize: "8px",
+                      textAlign: "center",
+                      marginBottom: "9px",
+                    }}
+                  >
+                    Completed
+                  </Typography>
+                </Typography>
+              </Typography>
+            </Box>
+          </Box>
+          <Box>
+            <Typography
+              variant="body2"
+              sx={{
+                color: "#fff",
+                fontWeight: "400",
+                fontSize: "9px",
+                marginLeft: "30px",
+              }}
+            >
+              *The value here has been rounded off.
+            </Typography>
+          </Box>
         </Box>
       </Box>
     </Box>
