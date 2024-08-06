@@ -50,7 +50,7 @@ const RecentOrders = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: isSmallScreen ? 'column' : 'row', gap: 2, paddingTop: '20px',  justifyContent: 'center', alignItems: 'center' }}>
+    <Box sx={{ display: 'flex', flexDirection: isSmallScreen ? 'column' : 'row', gap: 2, padding: '20px 0', justifyContent: 'center', alignItems: 'flex-start' }}>
       <Box sx={{ backgroundColor: '#1f1f26', padding: '20px', borderRadius: '8px', flex: 2, minWidth: '300px' }}>
         <Typography variant="h6" sx={{ color: '#fff', marginBottom: 2 }}>Recent Orders</Typography>
         <TableContainer component={Paper} sx={{ backgroundColor: 'transparent' }}>

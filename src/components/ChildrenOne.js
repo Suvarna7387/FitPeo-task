@@ -63,9 +63,9 @@ const ChildrenOne = () => {
           <Box
             sx={{
               display: "flex",
+              justifyContent: "flex-end",
               alignItems: "center",
               marginTop: "auto",
-              marginBottom: "5px",
             }}
           >
             <ArrowUpwardIcon sx={{ color: "green", fontSize: "16px" }} />
@@ -102,9 +102,9 @@ const ChildrenOne = () => {
           <Box
             sx={{
               display: "flex",
+              justifyContent: "flex-end",
               alignItems: "center",
               marginTop: "auto",
-              marginBottom: "5px",
             }}
           >
             <ArrowDownwardIcon sx={{ color: "red", fontSize: "16px" }} />
@@ -141,9 +141,9 @@ const ChildrenOne = () => {
           <Box
             sx={{
               display: "flex",
+              justifyContent: "flex-end",
               alignItems: "center",
               marginTop: "auto",
-              marginBottom: "5px",
             }}
           >
             <ArrowUpwardIcon sx={{ color: "green", fontSize: "16px" }} />
@@ -180,9 +180,9 @@ const ChildrenOne = () => {
           <Box
             sx={{
               display: "flex",
+              justifyContent: "flex-end",
               alignItems: "center",
               marginTop: "auto",
-              marginBottom: "5px",
             }}
           >
             <ArrowDownwardIcon sx={{ color: "red", fontSize: "16px" }} />
@@ -198,10 +198,10 @@ const ChildrenOne = () => {
 
       <Box
         sx={{
-          flex: isSmallScreen ? "none" : isTabScreen ? 50 : 35,
+          flex: isSmallScreen ? "none" : isTabScreen ? 50 : 33,
           backgroundColor: "#1f1f26",
           padding: 2,
-          marginLeft: isSmallScreen ? 0 : 2,
+          marginLeft: isSmallScreen ? 0 : 0,
           width: "100%",
           marginTop: isSmallScreen ? 2 : 0,
           display: "flex",
@@ -236,81 +236,84 @@ const ChildrenOne = () => {
           </Box>
         </Box>
         <Box
+  sx={{
+    position: "relative",
+    display: "inline-flex",
+    marginTop: isSmallScreen ? 2 : 0,
+    flexDirection: "column",
+    alignItems: "center",
+  }}
+>
+  <CircularProgress
+    variant="determinate"
+    value={70}
+    size={70}
+    thickness={5}
+    sx={{ color: "#7194fe" }}
+  />
+  <Box
+    sx={{
+      top: 0,
+      left: 0,
+      bottom: 0,
+      right: 0,
+      position: "absolute",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      flexDirection: "column",
+    }}
+  >
+    <Typography
+      variant="body2"
+      sx={{
+        color: "#fff",
+        fontWeight: "600",
+        fontSize: "12px",
+        textAlign: "center",
+      }}
+    >
+      70%
+      <Typography
+        variant="body2"
+        sx={{
+          color: "#fff",
+          fontWeight: "200",
+          fontSize: "8px",
+          textAlign: "center",
+        }}
+      >
+        Goal{" "}
+        <Typography
+          variant="body2"
           sx={{
-            position: "relative",
-            display: "inline-flex",
-            marginTop: isSmallScreen ? 2 : 0,
+            color: "#fff",
+            fontWeight: "200",
+            fontSize: "8px",
+            textAlign: "center",
+            marginBottom: "9px",
           }}
         >
-          <CircularProgress
-            variant="determinate"
-            value={70}
-            size={70}
-            thickness={5}
-            sx={{ color: "#7194fe" }}
-          />
-          <Box
-            sx={{
-              top: 0,
-              left: 0,
-              bottom: 0,
-              right: 0,
-              position: "absolute",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexDirection: "column",
-            }}
-          >
-            <Typography
-              variant="body2"
-              sx={{
-                color: "#fff",
-                fontWeight: "600",
-                fontSize: "12px",
-                textAlign: "center",
-              }}
-            >
-              70%
-              <Typography
-                variant="body2"
-                sx={{
-                  color: "#fff",
-                  fontWeight: "200",
-                  fontSize: "8px",
-                  textAlign: "center",
-                }}
-              >
-                Goal{" "}
-                <Typography
-                  variant="body2"
-                  sx={{
-                    color: "#fff",
-                    fontWeight: "200",
-                    fontSize: "8px",
-                    textAlign: "center",
-                    marginBottom: "9px",
-                  }}
-                >
-                  Completed
-                </Typography>
-              </Typography>
-            </Typography>
-          </Box>
-        </Box>
-        <Box sx={{ marginTop: isSmallScreen ? 2 : 0 }}>
-          <Typography
-            variant="body2"
-            sx={{
-              color: "#fff",
-              fontWeight: "400",
-              fontSize: "9px",
-              textAlign: isSmallScreen ? "center" : "left",
-            }}
-          >
-            *The value here has been rounded off.
-          </Typography>
-        </Box>
+          Completed
+        </Typography>
+      </Typography>
+    </Typography>
+  </Box>
+  <Box sx={{ marginTop: 1 }}>
+    <Typography
+      variant="body2"
+      sx={{
+        color: "#fff",
+        fontWeight: "400",
+        fontSize: "9px",
+        textAlign: "center",
+      }}
+    >
+      *The value here has been rounded off.
+    </Typography>
+  </Box>
+</Box>
+
       </Box>
     </Box>
   );

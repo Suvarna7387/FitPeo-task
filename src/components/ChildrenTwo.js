@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Box, useMediaQuery, useTheme, Typography, Button, Menu, MenuItem } from '@mui/material';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
@@ -28,6 +28,14 @@ const ChildrenTwo = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const graphRef = useRef(null);
+  const [graphHeight, setGraphHeight] = useState(0);
+
+  useEffect(() => {
+    if (graphRef.current) {
+      setGraphHeight(graphRef.current.offsetHeight);
+    }
+  }, [graphRef.current]);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -39,7 +47,7 @@ const ChildrenTwo = () => {
 
   return (
     <Box sx={{ display: 'flex', flexDirection: isSmallScreen ? 'column' : 'row', gap: 2, paddingTop: '20px', justifyContent: 'center', alignItems: 'stretch' }}>
-      <Box sx={{ backgroundColor: '#1f1f26', padding: '20px', borderRadius: '8px', flex: isSmallScreen ? 'none' : 2.6, minWidth: '300px', display: 'flex', flexDirection: 'column' }}>
+      <Box ref={graphRef} sx={{ backgroundColor: '#1f1f26', padding: '20px', borderRadius: '8px', flex: isSmallScreen ? 'none' : 2.6, minWidth: '300px', display: 'flex', flexDirection: 'column' }}>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Typography variant="h6" sx={{ color: '#fff' }}>Activity</Typography>
           <Button
@@ -73,22 +81,22 @@ const ChildrenTwo = () => {
           </BarChart>
         </ResponsiveContainer>
       </Box>
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, flex: isSmallScreen ? 'none' : 1.4, minWidth: '200px', backgroundColor: '#1f1f26', borderRadius: '8px', padding: '10px' }}>
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#1f1f26', padding: '10px', borderRadius: '8px' }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: 2, flex: isSmallScreen ? 'none' : 1.4, minWidth: '200px', backgroundColor: '#1f1f26', borderRadius: '8px', padding: '10px', height: graphHeight }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#1f1f26', padding: '10px', borderRadius: '8px', flex: 1 }}>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <AssignmentIcon sx={{ color: 'orange', marginRight: '10px' }} />
             <Typography variant="body1" sx={{ color: '#fff' }}>Goals</Typography>
           </Box>
           <ArrowForwardIosIcon sx={{ color: '#fff' }} />
         </Box>
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#1f1f26', padding: '10px', borderRadius: '8px' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#1f1f26', padding: '10px', borderRadius: '8px', flex: 1 }}>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <FastfoodIcon sx={{ color: 'blue', marginRight: '10px' }} />
             <Typography variant="body1" sx={{ color: '#fff' }}>Popular Dishes</Typography>
           </Box>
           <ArrowForwardIosIcon sx={{ color: '#fff' }} />
         </Box>
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#1f1f26', padding: '10px', borderRadius: '8px' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#1f1f26', padding: '10px', borderRadius: '8px', flex: 1 }}>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <RestaurantMenuIcon sx={{ color: 'teal', marginRight: '10px' }} />
             <Typography variant="body1" sx={{ color: '#fff' }}>Menus</Typography>
