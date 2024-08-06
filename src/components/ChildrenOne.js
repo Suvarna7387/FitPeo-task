@@ -24,6 +24,8 @@ const ChildrenOne = () => {
         display: "flex",
         flexDirection: isSmallScreen ? "column" : "row",
         width: "100%",
+        flexWrap: isSmallScreen ? "wrap" : "nowrap",
+        gap: 2,
       }}
     >
       <Box
@@ -32,29 +34,24 @@ const ChildrenOne = () => {
           display: "flex",
           flexDirection: isSmallScreen ? "column" : "row",
           flexWrap: "wrap",
-          gap: 1,
-          width: isSmallScreen ? "100%" : "auto",
+          gap: 2,
+          width: "100%",
         }}
       >
         <Box
           sx={{
             flex: 1,
             backgroundColor: "#1f1f26",
-            paddingRight: 2,
+            padding: 2,
             display: "flex",
             flexDirection: "column",
-            padding: 1,
             borderRadius: 2,
-            position: "relative",
-            width: "250px", // Set fixed width
-            height: "120px", // Set fixed height
+            maxWidth: isSmallScreen ? "100%" : "250px",
+            height: "auto",
           }}
         >
           <ShoppingCartOutlinedIcon />
-          <Typography
-            variant="body1"
-            sx={{ color: "#ccc", fontSize: "12px", paddingTop: "5px" }}
-          >
+          <Typography variant="body1" sx={{ color: "#ccc", paddingTop: 1 }}>
             Total Orders
           </Typography>
           <Typography
@@ -67,9 +64,8 @@ const ChildrenOne = () => {
             sx={{
               display: "flex",
               alignItems: "center",
-              position: "absolute",
-              bottom: 15,
-              right: 10,
+              marginTop: "auto",
+              marginBottom: "5px",
             }}
           >
             <ArrowUpwardIcon sx={{ color: "green", fontSize: "16px" }} />
@@ -85,21 +81,16 @@ const ChildrenOne = () => {
           sx={{
             flex: 1,
             backgroundColor: "#1f1f26",
-            paddingRight: 2,
+            padding: 2,
             display: "flex",
             flexDirection: "column",
-            padding: 1,
             borderRadius: 2,
-            position: "relative",
-            width: "250px", // Set fixed width
-            height: "120px", // Set fixed height
+            maxWidth: isSmallScreen ? "100%" : "250px",
+            height: "auto",
           }}
         >
           <ShoppingCartCheckoutOutlinedIcon />
-          <Typography
-            variant="body1"
-            sx={{ color: "#ccc", fontSize: "12px", paddingTop: "5px" }}
-          >
+          <Typography variant="body1" sx={{ color: "#ccc", paddingTop: 1 }}>
             Total Delivered
           </Typography>
           <Typography
@@ -112,9 +103,8 @@ const ChildrenOne = () => {
             sx={{
               display: "flex",
               alignItems: "center",
-              position: "absolute",
-              bottom: 15,
-              right: 10,
+              marginTop: "auto",
+              marginBottom: "5px",
             }}
           >
             <ArrowDownwardIcon sx={{ color: "red", fontSize: "16px" }} />
@@ -130,21 +120,16 @@ const ChildrenOne = () => {
           sx={{
             flex: 1,
             backgroundColor: "#1f1f26",
-            paddingRight: 2,
+            padding: 2,
             display: "flex",
             flexDirection: "column",
-            padding: 1,
             borderRadius: 2,
-            position: "relative",
-            width: "250px", // Set fixed width
-            height: "120px", // Set fixed height
+            maxWidth: isSmallScreen ? "100%" : "250px",
+            height: "auto",
           }}
         >
           <RemoveShoppingCartOutlinedIcon />
-          <Typography
-            variant="body1"
-            sx={{ color: "#ccc", fontSize: "12px", paddingTop: "5px" }}
-          >
+          <Typography variant="body1" sx={{ color: "#ccc", paddingTop: 1 }}>
             Total Cancelled
           </Typography>
           <Typography
@@ -157,9 +142,8 @@ const ChildrenOne = () => {
             sx={{
               display: "flex",
               alignItems: "center",
-              position: "absolute",
-              bottom: 15,
-              right: 10,
+              marginTop: "auto",
+              marginBottom: "5px",
             }}
           >
             <ArrowUpwardIcon sx={{ color: "green", fontSize: "16px" }} />
@@ -175,21 +159,16 @@ const ChildrenOne = () => {
           sx={{
             flex: 1,
             backgroundColor: "#1f1f26",
-            paddingRight: 2,
+            padding: 2,
             display: "flex",
             flexDirection: "column",
-            padding: 1,
             borderRadius: 2,
-            position: "relative",
-            width: "250px", // Set fixed width
-            height: "120px", // Set fixed height
+            maxWidth: isSmallScreen ? "100%" : "250px",
+            height: "auto",
           }}
         >
           <ShoppingBasketOutlinedIcon />
-          <Typography
-            variant="body1"
-            sx={{ color: "#ccc", fontSize: "12px", paddingTop: "5px" }}
-          >
+          <Typography variant="body1" sx={{ color: "#ccc", paddingTop: 1 }}>
             Total Revenue
           </Typography>
           <Typography
@@ -202,9 +181,8 @@ const ChildrenOne = () => {
             sx={{
               display: "flex",
               alignItems: "center",
-              position: "absolute",
-              bottom: 15,
-              right: 10,
+              marginTop: "auto",
+              marginBottom: "5px",
             }}
           >
             <ArrowDownwardIcon sx={{ color: "red", fontSize: "16px" }} />
@@ -223,15 +201,16 @@ const ChildrenOne = () => {
           flex: isSmallScreen ? "none" : isTabScreen ? 50 : 35,
           backgroundColor: "#1f1f26",
           padding: 2,
-          marginLeft: isSmallScreen ? 0 : 1,
-          width: isSmallScreen ? "100%" : "auto",
-          marginTop: isSmallScreen ? 1 : 0,
+          marginLeft: isSmallScreen ? 0 : 2,
+          width: "100%",
+          marginTop: isSmallScreen ? 2 : 0,
           display: "flex",
-          flexDirection: "row",
+          flexDirection: isSmallScreen ? "column" : "row",
           borderRadius: 2,
+          alignItems: "center",
         }}
       >
-        <Box>
+        <Box sx={{ marginRight: isSmallScreen ? 0 : 3 }}>
           <Typography variant="body1" sx={{ color: "#fff" }}>
             Net Profit
           </Typography>
@@ -256,44 +235,53 @@ const ChildrenOne = () => {
             </Typography>
           </Box>
         </Box>
-        <Box>
+        <Box
+          sx={{
+            position: "relative",
+            display: "inline-flex",
+            marginTop: isSmallScreen ? 2 : 0,
+          }}
+        >
+          <CircularProgress
+            variant="determinate"
+            value={70}
+            size={70}
+            thickness={5}
+            sx={{ color: "#7194fe" }}
+          />
           <Box
             sx={{
-              position: "relative",
-              display: "inline-flex",
-              marginLeft: "90px",
+              top: 0,
+              left: 0,
+              bottom: 0,
+              right: 0,
+              position: "absolute",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexDirection: "column",
             }}
           >
-            <CircularProgress
-              variant="determinate"
-              value={70}
-              size={70}
-              thickness={5}
-              sx={{ color: "#7194fe" }}
-            />
-            <Box
+            <Typography
+              variant="body2"
               sx={{
-                top: 0,
-                left: 0,
-                bottom: 0,
-                right: 0,
-                position: "absolute",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "column",
+                color: "#fff",
+                fontWeight: "600",
+                fontSize: "12px",
+                textAlign: "center",
               }}
             >
+              70%
               <Typography
                 variant="body2"
                 sx={{
                   color: "#fff",
-                  fontWeight: "600",
-                  fontSize: "12px",
+                  fontWeight: "200",
+                  fontSize: "8px",
                   textAlign: "center",
                 }}
               >
-                70%
+                Goal{" "}
                 <Typography
                   variant="body2"
                   sx={{
@@ -301,38 +289,27 @@ const ChildrenOne = () => {
                     fontWeight: "200",
                     fontSize: "8px",
                     textAlign: "center",
+                    marginBottom: "9px",
                   }}
                 >
-                  Goal{" "}
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: "#fff",
-                      fontWeight: "200",
-                      fontSize: "8px",
-                      textAlign: "center",
-                      marginBottom: "9px",
-                    }}
-                  >
-                    Completed
-                  </Typography>
+                  Completed
                 </Typography>
               </Typography>
-            </Box>
-          </Box>
-          <Box>
-            <Typography
-              variant="body2"
-              sx={{
-                color: "#fff",
-                fontWeight: "400",
-                fontSize: "9px",
-                marginLeft: "30px",
-              }}
-            >
-              *The value here has been rounded off.
             </Typography>
           </Box>
+        </Box>
+        <Box sx={{ marginTop: isSmallScreen ? 2 : 0 }}>
+          <Typography
+            variant="body2"
+            sx={{
+              color: "#fff",
+              fontWeight: "400",
+              fontSize: "9px",
+              textAlign: isSmallScreen ? "center" : "left",
+            }}
+          >
+            *The value here has been rounded off.
+          </Typography>
         </Box>
       </Box>
     </Box>
